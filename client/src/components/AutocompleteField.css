@@ -1,0 +1,122 @@
+
+.autocomplete-wrapper {
+  position: relative;
+}
+
+
+.autocomplete-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1.5px solid var(--xe-yellow);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+  z-index: 200;
+  overflow: hidden;
+  animation: dropIn 0.15s ease;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.autocomplete-item {
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  transition: background 0.12s;
+  border-bottom: 1px solid #f0ece4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.autocomplete-item:last-child { border-bottom: none; }
+
+.autocomplete-item:hover,
+.autocomplete-item.highlighted {
+  background: var(--xe-yellow-light);
+}
+
+
+.autocomplete-item-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.autocomplete-pin {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.autocomplete-main {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+
+.autocomplete-secondary {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+.autocomplete-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.autocomplete-error {
+  font-size: 0.8rem;
+  color: var(--error);
+  margin-top: 4px;
+}
+
+.autocomplete-empty {
+  padding: 0.9rem 1rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+
+.selected-area-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--xe-yellow-light);
+  border: 1px solid var(--xe-yellow);
+  color: var(--xe-yellow-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 6px;
+}
+
+.selected-area-badge button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--xe-yellow-dark);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.selected-area-badge button:hover { opacity: 1; }
